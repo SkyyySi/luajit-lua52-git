@@ -12,10 +12,9 @@
 
 pkgbase='luajit'
 pkgname="${pkgbase}-lua52-git"
-# The patch version is the timestamp of the above git commit, obtain via `git show --no-patch --format='%ct'`
-_ct='1741730670'
-pkgver="2.1.${_ct}"
-pkgrel='1'
+_ct='1744978152'
+pkgver=2.1.1744318430
+pkgrel=1
 pkgdesc='Just-In-Time (JIT) compiler for the Lua programming language, with extended Lua 5.2 compatibility enabled'
 arch=( 'x86_64' 'i686' 'pentium4' 'armv7h' 'aarch64' )
 url='https://luajit.org/'
@@ -24,15 +23,13 @@ depends=( 'gcc-libs' )
 makedepends=( 'git' )
 provides=( "${pkgbase}" "${pkgbase}-git" )
 conflicts=( "${pkgbase}" "${pkgbase}-git" )
-source=( "git+${url}/git/${pkgbase}.git" )
+source=( "git+${url}git/${pkgbase}.git" )
 sha256sums=( 'SKIP' )
 
 pkgver() {
 	cd "${pkgbase}" || exit 1
 
 	_ct=$(git show --no-patch --format='%ct')
-
-	local _tag=''
 
 	# v2.1
 	_tag=$(
@@ -43,10 +40,6 @@ pkgver() {
 	)
 
 	printf '%s.%s' "${_tag}" "${_ct}"
-}
-
-check() {
-	[[ "${_ct}" == "$(< .relver)" ]]
 }
 
 build() {
