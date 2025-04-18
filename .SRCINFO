@@ -1,17 +1,21 @@
-pkgbase = luajit-git
-	pkgdesc = Just-In-Time (JIT) compiler for the Lua programming language
-	pkgver = 2.1.r236.ga4f56a45
+pkgbase = luajit
+	pkgdesc = Just-In-Time (JIT) compiler for the Lua programming language, with extended Lua 5.2 compatibility enabled
+	pkgver = 2.1.1741730670
 	pkgrel = 1
 	url = https://luajit.org/
-	arch = i686
 	arch = x86_64
+	arch = i686
+	arch = pentium4
+	arch = armv7h
+	arch = aarch64
 	license = MIT
 	makedepends = git
 	depends = gcc-libs
-	provides = luajit=2.1.r140.gc525bcb9
+	provides = luajit
+	provides = luajit-git
 	conflicts = luajit
-	options = staticlibs
-	source = git+https://luajit.org/git/luajit.git
+	conflicts = luajit-git
+	source = git+https://luajit.org//git/luajit.git
 	sha256sums = SKIP
 
-pkgname = luajit-git
+pkgname = luajit-lua52-git
