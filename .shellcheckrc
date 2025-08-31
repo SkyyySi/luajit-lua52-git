@@ -1,0 +1,13 @@
+# "foo appears unused. Verify it or export it."
+# https://www.shellcheck.net/wiki/SC2034
+disable=2034
+
+# "Tips depend on target shell and yours is unknown. Add a shebang."
+# https://www.shellcheck.net/wiki/SC2148
+#disable=2148
+shell=bash
+
+# "var is referenced but not assigned."
+# https://www.shellcheck.net/wiki/SC2154
+#disable=2154
+# Instead of this being disabled, use `${var:?}` to throw if `var` is not set.
