@@ -11,8 +11,8 @@
 pkgbase='luajit'
 pkgname="${pkgbase}-lua52compat-git"
 _ct='1744978152'
-pkgver='2.1.1744318430'
-pkgrel='1'
+pkgver=2.1.1753364724
+pkgrel=1
 pkgdesc='Just-In-Time (JIT) compiler for the Lua programming language, with extended Lua 5.2 compatibility enabled'
 # Based on this support matrix: <https://luajit.org/status.html#architectures>
 arch=(
